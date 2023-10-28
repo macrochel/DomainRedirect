@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: development
+    volumes:
+      - .:/usr/src/app
+    command: npm run start:dev
+    ports:
+      - "5300:5300"
+    restart: always
